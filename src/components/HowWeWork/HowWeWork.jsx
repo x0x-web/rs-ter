@@ -105,6 +105,14 @@ const HowWeWork = () => {
     };
   }, [isMobile]);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 1000); // Delay to ensure layout is settled
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="how-we-work" ref={containerRef}>
       <div className="how-we-work-col how-we-work-header" ref={headerRef}>
@@ -123,33 +131,29 @@ const HowWeWork = () => {
             </Copy>
             <div className="how-we-work-steps" ref={stepsRef}>
               <div
-                className={`how-we-work-step ${
-                  activeStep === 0 ? "active" : ""
-                }`}
+                className={`how-we-work-step ${activeStep === 0 ? "active" : ""
+                  }`}
               >
                 <p className="how-we-work-step-label">Step</p>
                 <p className="how-we-work-step-index">1</p>
               </div>
               <div
-                className={`how-we-work-step ${
-                  activeStep === 1 ? "active" : ""
-                }`}
+                className={`how-we-work-step ${activeStep === 1 ? "active" : ""
+                  }`}
               >
                 <p className="how-we-work-step-label">Step</p>
                 <p className="how-we-work-step-index">2</p>
               </div>
               <div
-                className={`how-we-work-step ${
-                  activeStep === 2 ? "active" : ""
-                }`}
+                className={`how-we-work-step ${activeStep === 2 ? "active" : ""
+                  }`}
               >
                 <p className="how-we-work-step-label">Step</p>
                 <p className="how-we-work-step-index">3</p>
               </div>
               <div
-                className={`how-we-work-step ${
-                  activeStep === 3 ? "active" : ""
-                }`}
+                className={`how-we-work-step ${activeStep === 3 ? "active" : ""
+                  }`}
               >
                 <p className="how-we-work-step-label">Step</p>
                 <p className="how-we-work-step-index">4</p>
